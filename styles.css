@@ -7,6 +7,7 @@ html {
     box-sizing: inherit;
 }
 
+/* Piano Shell */
 #piano {
     background-color: #00471b;
     width: 992px;
@@ -15,9 +16,30 @@ html {
     padding: 90px 20px 0 20px;
 }
 
+/* Black base for black keys */
 .keys {
     background-color: #040404;
     width: 949px;
     height: 180px;
     padding-left: 2px;
+}
+
+/* White keys !!! WHY does 'float' duplicate white keys? */
+.key {
+    background-color: #ffffff;
+    position: relative;
+    width: 41px;
+    height: 175px;
+    margin: 2px;
+    float: left;
+}
+
+/* Black keys !!!WHY does content="" make them show up?  */
+.key.black--key::after {
+    background-color: #1d1e22;
+    content: "";
+    position: absolute;
+    left: -18px;
+    width: 32px;
+    height: 100px;
 }
